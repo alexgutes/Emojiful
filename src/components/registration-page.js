@@ -13,7 +13,7 @@ export function RegistrationPage(props) {
   }
   return (
     <div className="container">
-      <div className="row">
+      <div className="row main">
         <div className="home one-half column">
           <h2>Register</h2>
           <RegistrationForm />

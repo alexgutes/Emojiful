@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 
 import LoginForm from "./login-form";
 import OnboardInfo from "./onboard-info";
+import "./landing-page.css";
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -13,7 +14,7 @@ export function LandingPage(props) {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row main">
         <div className="home one-half column">
           <h2>Login</h2>
           <LoginForm />

@@ -1,0 +1,9 @@
+.header-bar {
+  display: flex;
+  list-style: none;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 24px;
+}
