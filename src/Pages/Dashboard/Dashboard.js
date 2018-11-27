@@ -17,6 +17,9 @@ export class Dashboard extends React.Component {
           {this.props.username}
 !
         </h1>
+        <button type='submit'>
+        Start Learning
+        </button>
       </div>
     );
   }
