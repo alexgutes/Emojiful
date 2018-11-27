@@ -20,7 +20,8 @@ export function RegistrationPage(props) {
           <RegistrationForm />
           <span>
             Already have an account?
-            <Link to="/"> Login here</Link>
+            {' '}
+            <Link to="/">Login here</Link>
           </span>
         </div>
         <OnboardInfo />

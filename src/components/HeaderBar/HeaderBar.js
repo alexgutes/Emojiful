@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../../actions/auth';
 import { clearAuthToken } from '../../local-storage';
+import Emoji from '../Emoji';
 import './HeaderBar.css';
 
 export class HeaderBar extends React.Component {
@@ -25,7 +26,11 @@ export class HeaderBar extends React.Component {
       <div className="header-container">
         <ul className="header-list">
           <li>
-            <h3 className="logo">Emoji Learn</h3>
+            <h3 className="logo">
+              Emojiful
+              {' '}
+              <Emoji symbol="😜" />
+            </h3>
           </li>
           <li>{logOutButton}</li>
         </ul>

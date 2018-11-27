@@ -16,11 +16,12 @@ export function LandingPage(props) {
     <div className="container">
       <div className="row main">
         <div className="home one-half column">
-          <h2>Login</h2>
+          <h4 className="login-header">Login</h4>
           <LoginForm />
           <span>
             Don't have an account?
-            <Link to="/register"> Sign Up</Link>
+            {' '}
+            <Link to="/register">Sign Up</Link>
           </span>
         </div>
         <OnboardInfo />

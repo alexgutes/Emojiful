@@ -263,10 +263,10 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1eaedb;
+  color: #ca7df9;
 }
 a:hover {
-  color: #0fa0ce;
+  color: #f896d8;
 }
 
 /* Buttons
@@ -378,7 +378,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #f896d8;
   outline: 0;
 }
 label,
