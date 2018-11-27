@@ -1,12 +1,11 @@
-import {
-  createStore, applyMiddleware, combineReducers, compose,
-} from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import questionReducer from './reducers/questions';
+import historyReducer from './reducers/history';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,9 +15,10 @@ const store = createStore(
     auth: authReducer,
     protectedData: protectedDataReducer,
     question: questionReducer,
+    history: historyReducer
   }),
 
-  composeEnhancers(applyMiddleware(thunk)),
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 // Hydrate the authToken from localStorage if it exist

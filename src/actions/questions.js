@@ -24,7 +24,6 @@ export const fetchQuestion = () => (dispatch, getState) => {
 
   fetch(`${API_BASE_URL}/questions`, {
     headers: {
-      // Provide our existing token as credentials to get a new one
       Authorization: `Bearer ${authToken}`
     }
   })

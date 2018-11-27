@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestion, submitAnswer } from '../../actions/questions';
-// import Emoji from '../../components/Emoji';
+import { updateGuessHistory } from '../../actions/history';
 import Question from '../../components/Question';
 
 export class StartPage extends Component {
@@ -38,9 +38,16 @@ export class StartPage extends Component {
               answer: this.state.value
             };
 
+            const historyObj = {
+              guess: this.state.value,
+              correctAnswer: this.props.question.description,
+              correct: this.state.value === this.props.question.description
+            };
+
             this.setState({ value: '' });
 
             this.props.dispatch(submitAnswer(answerObj));
+            this.props.dispatch(updateGuessHistory(historyObj));
           }}
         >
           <input
@@ -63,3 +70,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(StartPage);
+
+// User Story: As a user, when I am using the app, my progress should be recorded so I know which questions I got correct or wrong
