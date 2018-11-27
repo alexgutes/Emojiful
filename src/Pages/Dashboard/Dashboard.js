@@ -6,7 +6,7 @@ import './Dashboard.css';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    // this.props.dispatch(fetchProtectedData());
   }
 
   render() {
@@ -14,24 +14,17 @@ export class Dashboard extends React.Component {
       <div className="dashboard container">
         <h1 className="greeting">
           Welcome,
-          {this.props.username}
-!
+          {this.props.auth.currentUser.username}!
         </h1>
-        <button type='submit'>
-        Start Learning
-        </button>
+        <button type="submit">Start Learning</button>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  const { currentUser } = state.auth;
-  return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data,
-  };
-};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  question: state.question
+});
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
