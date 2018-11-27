@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import Input from '../input';
+import Input from '../Input';
 import { login } from '../../actions/auth';
 import { required, nonEmpty } from '../../validators';
 
@@ -41,6 +42,7 @@ export class LoginForm extends React.Component {
           validate={[required, nonEmpty]}
         />
         <button
+          type="submit"
           className="button-primary u-full-width"
           disabled={this.props.pristine || this.props.submitting}
         >
