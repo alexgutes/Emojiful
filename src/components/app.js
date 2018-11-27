@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Route, withRouter } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Route, withRouter } from 'react-router-dom';
 
-import HeaderBar from "./header-bar";
-import LandingPage from "./landing-page";
-import Dashboard from "./dashboard";
-import RegistrationPage from "./registration-page";
-import { refreshAuthToken } from "../actions/auth";
+import HeaderBar from './header-bar';
+import LandingPage from './landing-page';
+import Dashboard from './dashboard';
+import RegistrationPage from './registration-page';
+import { refreshAuthToken } from '../actions/auth';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -26,7 +26,7 @@ export class App extends React.Component {
   startPeriodicRefresh() {
     this.refreshInterval = setInterval(
       () => this.props.dispatch(refreshAuthToken()),
-      60 * 60 * 1000 // One hour
+      60 * 60 * 1000, // One hour
     );
   }
 
@@ -52,7 +52,7 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking

@@ -1,9 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
-import RegistrationForm from "./registration-form";
-import OnboardInfo from "./onboard-info";
+import RegistrationForm from './registration-form';
+import OnboardInfo from './onboard-info';
 
 export function RegistrationPage(props) {
   // If we are logged in (which happens automatically when registration
@@ -29,7 +30,7 @@ export function RegistrationPage(props) {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
 });
 
 export default connect(mapStateToProps)(RegistrationPage);
