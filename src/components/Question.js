@@ -1,24 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchQuestion } from '../actions/questions';
+import React from 'react';
 
-export class Question extends Component {
-  componentWillMount() {
-    this.props.dispatch(fetchQuestion());
-    console.log(this.props.question);
-  }
-
-  render() {
-    return (
-      <div>
-        <h4>{this.props.question.emoji}</h4>{' '}
-      </div>
-    );
-  }
+export default function Question(props) {
+  return (
+    <div>
+      <h4>{props.question.emoji}</h4>{' '}
+    </div>
+  );
 }
-
-const mapStateToProps = state => ({
-  question: state.question.question
-});
-
-export default connect(mapStateToProps)(Question);
