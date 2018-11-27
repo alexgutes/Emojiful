@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { connect } from 'react-redux';
-import { clearAuth } from '../actions/auth';
-import { clearAuthToken } from '../local-storage';
-import './header-bar.css';
+import { clearAuth } from '../../actions/auth';
+import { clearAuthToken } from '../../local-storage';
+import './HeaderBar.css';
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -21,10 +22,14 @@ export class HeaderBar extends React.Component {
       );
     }
     return (
-      <ul className="header-bar">
-        <li className="logo">Emoji Learn</li>
-        <li>{logOutButton}</li>
-      </ul>
+      <div className="header-container">
+        <ul className="header-list">
+          <li>
+            <h3 className="logo">Emoji Learn</h3>
+          </li>
+          <li>{logOutButton}</li>
+        </ul>
+      </div>
     );
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import requiresLogin from './requires-login';
-import { fetchProtectedData } from '../actions/protected-data';
-import './dashboard.css';
+import requiresLogin from '../../components/RequiresLogin';
+import { fetchProtectedData } from '../../actions/protected-data';
+import './Dashboard.css';
 
 export class Dashboard extends React.Component {
   componentDidMount() {

@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import LoginForm from './login-form';
-import OnboardInfo from './onboard-info';
-import './landing-page.css';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import OnboardInfo from '../../components/OnboardInfo';
+import './LandingPage.css';
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
