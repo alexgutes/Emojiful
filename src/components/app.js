@@ -10,6 +10,7 @@ import RegistrationPage from "../Pages/RegistrationPage/RegistrationPage";
 import { refreshAuthToken } from "../actions/auth";
 import StartPage from "../Pages/StartPage/StartPage";
 import "./app.css";
+import Logout from "../Pages/Logout/Logout";
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -49,6 +50,7 @@ export class App extends React.Component {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/start" component={StartPage} />
+        <Route exact path="/logout" component={Logout} />
       </div>
     );
   }

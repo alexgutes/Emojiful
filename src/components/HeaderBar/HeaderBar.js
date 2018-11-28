@@ -24,7 +24,7 @@ export class HeaderBar extends React.Component {
           type="submit"
           onClick={() => {
             this.logOut();
-            window.location.href = "/";
+            window.location.href = "/logout";
           }}
         >
           Log out
