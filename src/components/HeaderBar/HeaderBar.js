@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import { connect } from 'react-redux';
-import { clearAuth } from '../../actions/auth';
-import { clearAuthToken } from '../../local-storage';
-import Emoji from '../Emoji';
-import './HeaderBar.css';
+import React from "react";
+import { connect } from "react-redux";
+import { clearAuth } from "../../actions/auth";
+import { clearAuthToken } from "../../local-storage";
+import Emoji from "../Emoji";
+import "./HeaderBar.css";
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -17,7 +17,11 @@ export class HeaderBar extends React.Component {
     let logOutButton;
     if (this.props.loggedIn) {
       logOutButton = (
-        <button type="submit" onClick={() => this.logOut()}>
+        <button
+          className="button-primary"
+          type="submit"
+          onClick={() => this.logOut()}
+        >
           Log out
         </button>
       );
@@ -27,12 +31,10 @@ export class HeaderBar extends React.Component {
         <ul className="header-list">
           <li>
             <h3 className="logo">
-              Emojiful
-              {' '}
-              <Emoji symbol="😜" />
+              Emojiful <Emoji symbol="😜" />
             </h3>
           </li>
-          <li>{logOutButton}</li>
+          <li className="logout-button">{logOutButton}</li>
         </ul>
       </div>
     );
@@ -40,7 +42,7 @@ export class HeaderBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
+  loggedIn: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(HeaderBar);

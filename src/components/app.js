@@ -1,14 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { Route, withRouter } from "react-router-dom";
 
-import HeaderBar from './HeaderBar/HeaderBar';
-import LandingPage from '../Pages/LandingPage/LandingPage';
-import Dashboard from '../Pages/Dashboard/Dashboard';
-import RegistrationPage from '../Pages/RegistrationPage/RegistrationPage';
-import { refreshAuthToken } from '../actions/auth';
-import StartPage from '../Pages/StartPage/StartPage';
+import HeaderBar from "./HeaderBar/HeaderBar";
+import LandingPage from "../Pages/LandingPage/LandingPage";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import RegistrationPage from "../Pages/RegistrationPage/RegistrationPage";
+import { refreshAuthToken } from "../actions/auth";
+import StartPage from "../Pages/StartPage/StartPage";
+import "./app.css";
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {

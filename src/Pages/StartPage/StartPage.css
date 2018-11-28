@@ -1,0 +1,41 @@
+.container {
+}
+
+.row {
+  margin-top: 75px;
+}
+
+.question-wrapper {
+  padding-top: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  text-align: center;
+  background-color: white;
+  max-width: 500px;
+}
+
+.flex-outer {
+  display: flex;
+  list-style: none;
+}
+
+.answer-input {
+  margin-right: 10px;
+}
+
+.answer {
+  margin-left: auto;
+}
+
+.score-wrapper {
+  padding: 2.5rem;
+  background-color: white;
+}
+
+.ask-emoji {
+  font-size: 200px;
+}
+
+.question {
+  font-size: 100px;
+}

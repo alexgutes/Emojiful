@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchQuestion, submitAnswer } from "../../actions/questions";
 import { updateGuessHistory } from "../../actions/history";
 import Question from "../../components/Question";
+import "./StartPage.css";
 
 export class StartPage extends Component {
   constructor(props) {
@@ -26,40 +27,58 @@ export class StartPage extends Component {
   render() {
     return (
       <div className="container">
-        <h1>What is this emoji?</h1>
-        <h1>
-          <Question question={this.props.question} />
-        </h1>
-        <form
-          onSubmit={event => {
-            event.preventDefault();
+        <div className="row">
+          <div className="two-thirds column question-wrapper">
+            <h3>What is this emoji?</h3>
+            <div className="question">
+              <Question className="question" question={this.props.question} />
+            </div>
 
-            const answerObj = {
-              answer: this.state.value
-            };
+            <form
+              onSubmit={event => {
+                event.preventDefault();
 
-            const historyObj = {
-              guess: this.state.value,
-              correctAnswer: this.props.question.description,
-              correct: this.state.value === this.props.question.description
-            };
+                const answerObj = {
+                  answer: this.state.value
+                };
 
-            this.setState({ value: "" });
+                const historyObj = {
+                  guess: this.state.value,
+                  correctAnswer: this.props.question.description,
+                  correct: this.state.value === this.props.question.description
+                };
 
-            this.props.dispatch(submitAnswer(answerObj));
-            this.props.dispatch(updateGuessHistory(historyObj));
-          }}
-        >
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
+                this.setState({ value: "" });
 
-        <p>{this.props.message.message}</p>
-        <p>Score: {this.props.history.score}</p>
+                this.props.dispatch(submitAnswer(answerObj));
+                this.props.dispatch(updateGuessHistory(historyObj));
+              }}
+            >
+              <ul className="flex-outer">
+                <li className="answer-input u-full-width">
+                  <input
+                    className="u-full-width"
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    placeholder="TYPE THE ANSWER"
+                  />
+                </li>
+                <li className="answer">
+                  <button className="button-primary" type="submit">
+                    Answer
+                  </button>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <div className="one-third column">
+            <div className="score-wrapper">
+              <p>Score: {this.props.history.score}</p>
+              <p>{this.props.message.message}</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
