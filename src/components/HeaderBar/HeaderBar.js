@@ -3,6 +3,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { clearAuth } from "../../actions/auth";
 import { clearAuthToken } from "../../local-storage";
+import { Redirect } from "react-router-dom";
+
 import Emoji from "../Emoji";
 import "./HeaderBar.css";
 
@@ -20,7 +22,10 @@ export class HeaderBar extends React.Component {
         <button
           className="button-primary"
           type="submit"
-          onClick={() => this.logOut()}
+          onClick={() => {
+            this.logOut();
+            window.location.href = "/";
+          }}
         >
           Log out
         </button>
