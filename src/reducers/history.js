@@ -1,7 +1,4 @@
-import {
-  UPDATE_GUESS_HISTORY_REQUEST,
-  UPDATE_GUESS_HISTORY_SUCCESS
-} from "../actions/history";
+import { UPDATE_GUESS_HISTORY_REQUEST } from "../actions/history";
 
 const initialState = {
   history: [],
@@ -16,7 +13,8 @@ export default function reducer(state = initialState, action) {
 
       currentState.push(guess);
 
-      let score = guess.correct ? (score = state.score++) : state.score--;
+      let score;
+      score = guess.correct ? (score = state.score++) : state.score--;
 
       Object.assign({}, state, {
         history: currentState,
@@ -24,6 +22,7 @@ export default function reducer(state = initialState, action) {
       });
     }
 
+    /* falls through */
     default:
       return state;
   }

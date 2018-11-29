@@ -3,7 +3,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { clearAuth } from "../../actions/auth";
 import { clearAuthToken } from "../../local-storage";
-import { Redirect } from "react-router-dom";
 
 import Emoji from "../Emoji";
 import "./HeaderBar.css";
@@ -12,6 +11,7 @@ export class HeaderBar extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
+    window.location.href = "/logout";
   }
 
   render() {
@@ -24,7 +24,6 @@ export class HeaderBar extends React.Component {
           type="submit"
           onClick={() => {
             this.logOut();
-            window.location.href = "/logout";
           }}
         >
           Log out

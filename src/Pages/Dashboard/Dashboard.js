@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import requiresLogin from "../../components/RequiresLogin";
 import { Link } from "react-router-dom";
-import { fetchProtectedData } from "../../actions/protected-data";
 import "./Dashboard.css";
 
 export class Dashboard extends React.Component {
