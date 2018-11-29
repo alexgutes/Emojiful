@@ -6,12 +6,14 @@ import { clearAuthToken } from "../../local-storage";
 
 import Emoji from "../Emoji";
 import "./HeaderBar.css";
+import { Redirect } from "react-router-dom";
 
 export class HeaderBar extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
-    window.location.href = "/logout";
+    console.log(this.props);
+    // window.location.href = "/logout";
   }
 
   render() {
@@ -21,7 +23,7 @@ export class HeaderBar extends React.Component {
       logOutButton = (
         <button
           className="button-primary"
-          type="submit"
+          type="button"
           onClick={() => {
             this.logOut();
           }}
@@ -29,6 +31,8 @@ export class HeaderBar extends React.Component {
           Log out
         </button>
       );
+    } else {
+      return <Redirect to="/logout" />;
     }
     return (
       <div className="header-container">

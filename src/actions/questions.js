@@ -1,8 +1,8 @@
-import API_BASE_URL from '../config';
+import API_BASE_URL from "../config";
 
-export const FETCH_QUESTION_REQUEST = 'FETCH_QUESTION_REQUEST';
-export const FETCH_QUESTION_SUCCESS = 'FETCH_QUESTION_SUCCESS';
-export const FETCH_QUESTION_ERROR = 'FETCH_QUESTION_ERROR';
+export const FETCH_QUESTION_REQUEST = "FETCH_QUESTION_REQUEST";
+export const FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS";
+export const FETCH_QUESTION_ERROR = "FETCH_QUESTION_ERROR";
 
 export const fetchQuestionRequest = () => ({
   type: FETCH_QUESTION_REQUEST
@@ -28,6 +28,8 @@ export const fetchQuestion = () => (dispatch, getState) => {
     }
   })
     .then(res => res.json())
+    // .then(res => res.text())
+    // .then(text => console.log(text))
     .then(res => dispatch(fetchQuestionSuccess(res.question)))
     .catch(err => dispatch(fetchQuestionError(err)));
 };
@@ -40,9 +42,9 @@ export const submitAnswer = answer => (dispatch, getState) => {
   console.log(answer);
 
   fetch(`${API_BASE_URL}/questions`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json; charset=utf-8',
+      "Content-Type": "application/json; charset=utf-8",
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(answer)
@@ -52,7 +54,7 @@ export const submitAnswer = answer => (dispatch, getState) => {
     })
     .then(response => {
       console.log(response);
-      if (response.message === 'Incorrect') {
+      if (response.message === "Incorrect") {
         dispatch(submitQuestionError(response.message));
       } else {
         dispatch(submitQuestionSuccess(response.message));
@@ -62,9 +64,9 @@ export const submitAnswer = answer => (dispatch, getState) => {
     .catch(error => console.log(error));
 };
 
-export const SUBMIT_QUESTION_REQUEST = 'SUBMIT_QUESTION_REQUEST';
-export const SUBMIT_QUESTION_SUCCESS = 'SUBMIT_QUESTION_SUCCESS';
-export const SUBMIT_QUESTION_ERROR = 'SUBMIT_QUESTION_ERROR';
+export const SUBMIT_QUESTION_REQUEST = "SUBMIT_QUESTION_REQUEST";
+export const SUBMIT_QUESTION_SUCCESS = "SUBMIT_QUESTION_SUCCESS";
+export const SUBMIT_QUESTION_ERROR = "SUBMIT_QUESTION_ERROR";
 
 export const submitQuestionRequest = () => ({
   type: SUBMIT_QUESTION_REQUEST
