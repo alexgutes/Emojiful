@@ -2,7 +2,7 @@ import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import { registerUser } from "../../actions/users";
 import { login } from "../../actions/auth";
-import Input from "../Input";
+import InputField from "../InputField";
 import {
   required,
   nonEmpty,
@@ -36,26 +36,26 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <label htmlFor="firstName">First name</label>
-        <Field component={Input} type="text" name="firstName" />
+        <Field component={InputField} type="text" name="firstName" />
         <label htmlFor="lastName">Last name</label>
-        <Field component={Input} type="text" name="lastName" />
+        <Field component={InputField} type="text" name="lastName" />
         <label htmlFor="username">Username</label>
         <Field
-          component={Input}
+          component={InputField}
           type="text"
           name="username"
           validate={[required, nonEmpty, isTrimmed]}
         />
         <label htmlFor="password">Password</label>
         <Field
-          component={Input}
+          component={InputField}
           type="password"
           name="password"
           validate={[required, passwordLength, isTrimmed]}
         />
         <label htmlFor="passwordConfirm">Confirm password</label>
         <Field
-          component={Input}
+          component={InputField}
           type="password"
           name="passwordConfirm"
           validate={[required, nonEmpty, matchesPassword]}
