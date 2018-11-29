@@ -24,6 +24,26 @@ export class StartPage extends Component {
     this.setState({ value: event.target.value });
   }
 
+  isIncorrect(message) {
+    if (message === "Correct") {
+      return message;
+    }
+    if (message === "Incorrect") {
+      return (
+        <div>
+          <p>Incorrect</p>
+          <p>
+            Correct Answer:{" "}
+            {
+              this.props.history.history[this.props.history.history.length - 1]
+                .correctAnswer
+            }
+          </p>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -75,7 +95,7 @@ export class StartPage extends Component {
           <div className="one-third column">
             <div className="score-wrapper">
               <p>Score: {this.props.history.score}</p>
-              <p>{this.props.message.message}</p>
+              <p>{this.isIncorrect(this.props.message.message)}</p>
             </div>
           </div>
         </div>

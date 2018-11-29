@@ -6,7 +6,7 @@ export default class Logout extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row logout-row">
           <div className="twelve columns logout-wrapper">
             <h5>You have been succesfully logged out. 👋</h5>
             <Link to="/">
