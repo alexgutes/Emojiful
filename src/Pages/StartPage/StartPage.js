@@ -6,6 +6,8 @@ import { fetchQuestion, submitAnswer } from "../../actions/questions";
 import { updateGuessHistory } from "../../actions/history";
 import Question from "../../components/Question";
 import "./StartPage.css";
+import { list } from "postcss";
+import ListHistory from "../../components/ListHistory";
 
 export class StartPage extends Component {
   constructor(props) {
@@ -26,12 +28,12 @@ export class StartPage extends Component {
 
   isIncorrect(message) {
     if (message === "Correct") {
-      return message;
+      return <span className="green">✅ {message}</span>;
     }
     if (message === "Incorrect") {
       return (
         <div>
-          <p>Incorrect</p>
+          <p className="red">❌ Incorrect</p>
           <p>
             Correct Answer:{" "}
             {
@@ -45,6 +47,29 @@ export class StartPage extends Component {
   }
 
   render() {
+    let listHistory = this.props.history.history
+      .map((question, index) => {
+        let correct;
+        let color;
+        let emoji;
+        if (question.correct) {
+          correct = "Correct";
+          color = "green";
+          emoji = "✅";
+        } else {
+          correct = "Incorrect";
+          color = "red";
+          emoji = "❌";
+        }
+        return (
+          <li key={index}>
+            <span> {question.correctAnswer}</span>{" "}
+            <span className={color}>{emoji}</span>
+          </li>
+        );
+      })
+      .reverse();
+
     return (
       <div className="container">
         <div className="row">
@@ -96,6 +121,10 @@ export class StartPage extends Component {
             <div className="score-wrapper">
               <p>Score: {this.props.history.score}</p>
               {this.isIncorrect(this.props.message.message)}
+            </div>
+            <div className="progress-wrapper">
+              <h5>Progress</h5>
+              <ul>{listHistory}</ul>
             </div>
           </div>
         </div>

@@ -44,10 +44,32 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.progress-wrapper {
+  margin-top: 20px;
+  padding: 2.5rem;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.progress-wrapper:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+li {
+  list-style-type: none;
+}
+
 .ask-emoji {
   font-size: 200px;
 }
 
 .question {
   font-size: 100px;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
 }
