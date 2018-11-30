@@ -119,7 +119,7 @@ export class StartPage extends Component {
           </div>
           <div className="one-third column">
             <div className="score-wrapper">
-              <p>Score: {this.props.history.score}</p>
+              <h5>Score: {this.props.history.score}</h5>
               {this.isIncorrect(this.props.message.message)}
             </div>
             <div className="progress-wrapper">
