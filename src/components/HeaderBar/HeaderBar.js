@@ -42,9 +42,11 @@ export class HeaderBar extends React.Component {
       <div className="header-container">
         <ul className="header-list">
           <li>
-            <h3 className="logo">
-              Emojiful <Emoji symbol="😜" />
-            </h3>
+            <Link className="link-logo" to="/">
+              <h3 className="logo">
+                Emojiful <Emoji symbol="😜" />
+              </h3>
+            </Link>
           </li>
           <li className="logout-button">{logOutButton}</li>
         </ul>
