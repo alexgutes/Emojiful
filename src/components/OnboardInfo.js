@@ -15,7 +15,7 @@ export default function OnboardInfo() {
         tristique lorem. Suspendisse id est lacus. Fusce nisl ligula, volutpat a
         vestibulum nec, tempus eget tellus.
       </p>
-      <p>Please login or register to get started... </p>
+      <p>Please login or register to get started.... </p>
       <Emoji symbol="💯" />
     </div>
   );
