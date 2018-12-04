@@ -3,6 +3,9 @@ Emojiful is a spaced-repetiton app for learning the Emoji language.
 
 Space repetition is a learning technique that incorporates increasing intervals of time between subsequent review of previously learned material in order to exploit the psychological [spacing effect](https://en.wikipedia.org/wiki/Spacing_effect).
 
+![Site Screenshot](https://drive.google.com/file/d/1O-3Chi1RXWzxR-tFgTHtm526HAX56Yxx/view?usp=sharing)
+
+
 ### Tech Stack
 **Front End:**
 * React
